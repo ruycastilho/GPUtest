@@ -1,6 +1,7 @@
 # Image for GPU testing 
 # Ubuntu 14.04 - Running on Krueger
 # OpenCL
+# 12/09/2017
 
 
 # Header
@@ -19,13 +20,12 @@ exec echo $'OS Version - Ubuntu 14.04\n'
 %post
 
     # General
-    sudo apt-get update
+    apt-get update
     apt-get -y install build-essential
     apt-get -y install git
     apt-get -y install cmake
     apt-get -y install g++
     apt-get -y install vim 
-    apt-get -y install python3-pip
     apt-get -y install wget
     	
     #Seismic Unix
@@ -45,9 +45,12 @@ exec echo $'OS Version - Ubuntu 14.04\n'
 	make finstall
 	make xtinstall
 	make sfinstall 
+
 	
     #OpenCL
     apt-get install ocl-icd-opencl-dev
+    
+    #apt	-get -y install ocl-icd-opencl-dev
     
     # OpenMPI
     apt-get -y install libopenmpi-dev
