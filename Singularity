@@ -1,7 +1,7 @@
 # Image for GPU testing 
 # Ubuntu 14.04 - Running on Krueger
 # OpenCL
-# /09/2017
+# 12/09/2017
 
 
 # Header
@@ -26,8 +26,10 @@ exec echo $'OS Version - Ubuntu 14.04\n'
     apt-get -y install g++
     apt-get -y install vim 
     apt-get -y install python3-pip
+    	
     
     #OpenCL
+    apt-get install ocl-icd-opencl-dev
     
     #apt-get -y install ocl-icd-opencl-dev
     
