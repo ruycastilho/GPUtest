@@ -77,7 +77,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install libopencv-video2.4:amd64
 	
 	apt-get -y --ignore-missing install ocl-icd-libopencl1:amd64
-
+    apt-get -y --ignore-missing install ocl-icd-opencl-dev
 	apt-get -y --ignore-missing install python-opencv
 	apt-get -y --ignore-missing install libpython-dev:amd64
 	apt-get -y --ignore-missing install libpython-stdlib:amd64
