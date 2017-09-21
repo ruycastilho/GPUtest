@@ -4,8 +4,9 @@
 
 # Header
 
-Bootstrap: docker
-From: ubuntu:14.04
+Bootstrap: debootstrap
+OSVersion: trusty  
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 # Sections
     
