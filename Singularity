@@ -28,14 +28,14 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install python
 	apt-get -y --ignore-missing install python-apt
 	apt-get -y --ignore-missing install python-apt-common
-    apt-get -y install wget
-    apt-get -y install flex
-    apt-get install -y automake
-    apt-get install -y autoconf
-    apt-get install -y autotools-dev
-    apt-get install -y libtool
-    apt-get -y install git  
-    apt-get -y install linux-headers-$(uname -r)
+    apt-get -y --ignore-missing install wget
+    apt-get -y --ignore-missing install flex
+    apt-get -y --ignore-missing install automake
+    apt-get -y --ignore-missing install autoconf
+    apt-get -y --ignore-missing install autotools-dev
+    apt-get -y --ignore-missing install libtool
+    apt-get -y --ignore-missing install git  
+    apt-get -y --ignore-missing install linux-headers-$(uname -r)
 
     apt-get -y --ignore-missing install python2.7
 	apt-get -y --ignore-missing install python2.7-dev
