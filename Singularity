@@ -5,7 +5,7 @@
 # Header
 
 Bootstrap: debootstrap
-OSVersion: trusty  
+OSVersion: trusty
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 # Sections
@@ -16,6 +16,8 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     add-apt-repository universe 
     apt-get -y install build-essential  
 	apt-get -y --ignore-missing install curl
+	apt-get -y --ignore-missing install cmake
+	apt-get -y --ignore-missing install make
 	apt-get -y --ignore-missing install ftp
 	apt-get -y --ignore-missing install fuse
 	apt-get -y --ignore-missing install g++
