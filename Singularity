@@ -1,21 +1,13 @@
 # Image for GPU testing 
 # Ubuntu 14.04 - Running on Jason
-# OpenCL
-# 12/09/2017
-
+# 21/09/2017
 
 # Header
 
 Bootstrap: docker
 From: ubuntu:14.04
 
-#Bootstrap: debootstrap
-#OSVersion: trusty  
-#MirrorURL: http://us.archive.ubuntu.com/ubuntu/
-
 # Sections
-
-%labels
     
 %post
     apt-get update
