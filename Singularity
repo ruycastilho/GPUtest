@@ -25,32 +25,22 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install gcc-4.8
 	apt-get -y --ignore-missing install gcc-4.8-base:amd64
 	apt-get -y --ignore-missing install gcc-4.9-base:amd64
-	apt-get -y --ignore-missing install python
-	apt-get -y --ignore-missing install python-apt
-	apt-get -y --ignore-missing install python-apt-common
-    apt-get -y --ignore-missing install wget
-    apt-get -y --ignore-missing install flex
-    apt-get -y --ignore-missing install automake
-    apt-get -y --ignore-missing install autoconf
-    apt-get -y --ignore-missing install autotools-dev
-    apt-get -y --ignore-missing install libtool
-    apt-get -y --ignore-missing install git  
+	
     apt-get -y --ignore-missing install linux-headers-$(uname -r)
-
-    apt-get -y --ignore-missing install python2.7
-	apt-get -y --ignore-missing install python2.7-dev
-	apt-get -y --ignore-missing install python2.7-minimal
-	apt-get -y --ignore-missing install python3
-	apt-get -y --ignore-missing install python3-apport
-	apt-get -y --ignore-missing install python3-apt
-	apt-get -y --ignore-missing install python-pip
-	apt-get -y --ignore-missing install python3-pip
-	apt-get -y --ignore-missing install vim
-	apt-get -y --ignore-missing install vim-common
-	apt-get -y --ignore-missing install vim-runtime
-	apt-get -y --ignore-missing install vim-tiny
     
-	apt-get -y --ignore-missing install libopenmpi1.6
+	apt-get -y --ignore-missing install nvidia-375
+	apt-get -y --ignore-missing install nvidia-375-dev
+	apt-get -y --ignore-missing install nvidia-machine-learning-repo-ubuntu1404
+	apt-get -y --ignore-missing install nvidia-modprobe
+	apt-get -y --ignore-missing install nvidia-opencl-icd-375
+	apt-get -y --ignore-missing install nvidia-prime
+	apt-get -y --ignore-missing install nvidia-profiler
+	apt-get -y --ignore-missing install nvidia-visual-profiler
+	apt-get -y --ignore-missing install nvidia-settings
+	
+	apt-get -y --ignore-missing install opencl-headers
+	apt-get -y --ignore-missing install opencv-doc
+	apt-get -y --ignore-missing install python-opencv
 	apt-get -y --ignore-missing install libopencv-calib3d-dev:amd64
 	apt-get -y --ignore-missing install libopencv-calib3d2.4:amd64
 	apt-get -y --ignore-missing install libopencv-contrib2.4:amd64
@@ -75,10 +65,35 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install libopencv-photo2.4:amd64
 	apt-get -y --ignore-missing install libopencv-video-dev:amd64
 	apt-get -y --ignore-missing install libopencv-video2.4:amd64
-	
 	apt-get -y --ignore-missing install ocl-icd-libopencl1:amd64
     apt-get -y --ignore-missing install ocl-icd-opencl-dev
-	apt-get -y --ignore-missing install python-opencv
+
+	apt-get -y --ignore-missing install python
+	apt-get -y --ignore-missing install python-apt
+	apt-get -y --ignore-missing install python-apt-common
+    apt-get -y --ignore-missing install wget
+    apt-get -y --ignore-missing install flex
+    apt-get -y --ignore-missing install automake
+    apt-get -y --ignore-missing install autoconf
+    apt-get -y --ignore-missing install autotools-dev
+    apt-get -y --ignore-missing install libtool
+    apt-get -y --ignore-missing install git  
+
+    apt-get -y --ignore-missing install python2.7
+	apt-get -y --ignore-missing install python2.7-dev
+	apt-get -y --ignore-missing install python2.7-minimal
+	apt-get -y --ignore-missing install python3
+	apt-get -y --ignore-missing install python3-apport
+	apt-get -y --ignore-missing install python3-apt
+	apt-get -y --ignore-missing install python-pip
+	apt-get -y --ignore-missing install python3-pip
+	apt-get -y --ignore-missing install vim
+	apt-get -y --ignore-missing install vim-common
+	apt-get -y --ignore-missing install vim-runtime
+	apt-get -y --ignore-missing install vim-tiny
+    
+	apt-get -y --ignore-missing install libopenmpi1.6
+	
 	apt-get -y --ignore-missing install libpython-dev:amd64
 	apt-get -y --ignore-missing install libpython-stdlib:amd64
 	apt-get -y --ignore-missing install libpython2.7:amd64
@@ -91,6 +106,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install libpython3.4-dev:amd64
 	apt-get -y --ignore-missing install libpython3.4-minimal:amd64
 	apt-get -y --ignore-missing install libpython3.4-stdlib:amd64
-	apt-get -y --ignore-missing install opencl-headers
-	apt-get -y --ignore-missing install opencv-doc
+
 
