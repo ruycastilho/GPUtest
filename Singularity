@@ -1,5 +1,7 @@
-Bootstrap: docker
-From: nvidia/cuda:8.0-runtime-ubuntu14.04
+
+Bootstrap: debootstrap
+OSVersion: trusty  
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %post
 
@@ -13,9 +15,58 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y --ignore-missing install autoconf
     apt-get -y --ignore-missing install autotools-dev
     apt-get -y --ignore-missing install libtool
- 
-    apt-get -y install nvidia-opencl-dev
+
+	# Cuda 8.0
+
     apt-get -y install linux-headers-$(uname -r)
+	wget "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb"   
+	dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb
+	apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+	apt-get update
+	apt-get -y install cuda
+
+	apt-get -y --ignore-missing install libcuda1-375
+	apt-get -y --ignore-missing install cuda-8-0
+	apt-get -y --ignore-missing install cuda-command-line-tools-8-0
+	apt-get -y --ignore-missing install cuda-core-8-0
+	apt-get -y --ignore-missing install cuda-cublas-8-0
+	apt-get -y --ignore-missing install cuda-cublas-dev-8-0
+	apt-get -y --ignore-missing install cuda-cudart-8-0
+	apt-get -y --ignore-missing install cuda-cudart-dev-8-0
+	apt-get -y --ignore-missing install cuda-cufft-8-0
+	apt-get -y --ignore-missing install cuda-cufft-dev-8-0
+	apt-get -y --ignore-missing install cuda-curand-8-0
+	apt-get -y --ignore-missing install cuda-curand-dev-8-0
+	apt-get -y --ignore-missing install cuda-cusolver-8-0
+	apt-get -y --ignore-missing install cuda-cusolver-dev-8-0
+	apt-get -y --ignore-missing install cuda-cusparse-8-0
+	apt-get -y --ignore-missing install cuda-cusparse-dev-8-0
+	apt-get -y --ignore-missing install cuda-demo-suite-8-0
+	apt-get -y --ignore-missing install cuda-documentation-8-0
+	apt-get -y --ignore-missing install cuda-driver-dev-8-0
+	apt-get -y --ignore-missing install cuda-drivers
+	apt-get -y --ignore-missing install cuda-license-8-0
+	apt-get -y --ignore-missing install cuda-misc-headers-8-0
+	apt-get -y --ignore-missing install cuda-npp-8-0
+	apt-get -y --ignore-missing install cuda-npp-dev-8-0
+	apt-get -y --ignore-missing install cuda-nvgraph-8-0
+	apt-get -y --ignore-missing install cuda-nvgraph-dev-8-0
+	apt-get -y --ignore-missing install cuda-nvml-dev-8-0
+	apt-get -y --ignore-missing install cuda-nvrtc-8-0
+	apt-get -y --ignore-missing install cuda-nvrtc-dev-8-0
+	apt-get -y --ignore-missing install cuda-repo-ubuntu1404
+	apt-get -y --ignore-missing install cuda-runtime-8-0
+	apt-get -y --ignore-missing install cuda-samples-8-0
+	apt-get -y --ignore-missing install cuda-toolkit-8-0
+	apt-get -y --ignore-missing install cuda-visual-tools-8-0  
+
+	export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+	export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+	# OpenCL
+
+    apt-get -y install nvidia-opencl-dev
 	apt-get -y --ignore-missing install nvidia-375
 	apt-get -y --ignore-missing install nvidia-375-dev
 	apt-get -y --ignore-missing install nvidia-machine-learning-repo-ubuntu1404
