@@ -20,7 +20,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
     apt-get -y install linux-headers-generic
 	wget -q "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb"   
-	dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb
+	dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
 	apt-key add /var/cuda-repo-<version>/7fa2af80.pub
 	apt-get update
 	apt-get -y install cuda
