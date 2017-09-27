@@ -10,11 +10,11 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install make
     apt-get -y install cmake
 	apt-get -y install wget
-    apt-get -y --ignore-missing install flex
-    apt-get -y --ignore-missing install automake
-    apt-get -y --ignore-missing install autoconf
-    apt-get -y --ignore-missing install autotools-dev
-    apt-get -y --ignore-missing install libtool
+    apt-get -y install flex
+    apt-get -y install automake
+    apt-get -y install autoconf
+    apt-get -y install autotools-dev
+    apt-get -y install libtool
 
 	# Cuda 8.0
 
