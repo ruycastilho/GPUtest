@@ -11,6 +11,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install cmake
 	apt-get -y install wget
     apt-get -y install flex
+    apt-get -y install apt-utils
     apt-get -y install automake
     apt-get -y install autoconf
     apt-get -y install autotools-dev
@@ -19,9 +20,8 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	# Cuda 8.0
 
     apt-get -y install linux-headers-generic
-	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb" -P ~/Downloads
-	cd ~/Downloads
-	ls
+    cd /tmp
+	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb"
     dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
 	apt-key add /var/cuda-repo-8.0.61-1/7fa2af80.pub
 	apt-get update
