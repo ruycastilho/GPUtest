@@ -1,4 +1,3 @@
-
 Bootstrap: debootstrap
 OSVersion: trusty  
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
@@ -24,18 +23,20 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb
 	apt-key add /var/cuda-repo-8-0-local-ga2/7fa2af80.pub
                     
-	# OpenCL
+	# Nvidia // OpenCL
 
+	apt-get purge nvidia*
+	add-apt-repository ppa:graphics-drivers
+	apt-get update
+	apt-get -y install nvidia-375
     apt-get -y install nvidia-opencl-dev
-	apt-get -y --ignore-missing install nvidia-375
-	apt-get -y --ignore-missing install nvidia-375-dev
-	apt-get -y --ignore-missing install nvidia-machine-learning-repo-ubuntu1404
-	apt-get -y --ignore-missing install nvidia-modprobe
-	apt-get -y --ignore-missing install nvidia-opencl-icd-375
-	apt-get -y --ignore-missing install nvidia-prime
-	apt-get -y --ignore-missing install nvidia-profiler
-	apt-get -y --ignore-missing install nvidia-visual-profiler
-	apt-get -y --ignore-missing install nvidia-settings
+	apt-get -y install nvidia-375-dev
+	apt-get -y install nvidia-modprobe
+	apt-get -y install nvidia-opencl-icd-375
+	apt-get -y install nvidia-prime
+	apt-get -y install nvidia-profiler
+	apt-get -y install nvidia-visual-profiler
+	apt-get -y install nvidia-settings
 	
 	apt-get -y --ignore-missing install opencl-headers
 	apt-get -y --ignore-missing install opencv-doc
@@ -71,9 +72,9 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 	apt-get update
 	apt-get -y install cuda
-    export PATH=/usr/local/cuda-9.0/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/usr/lib63/nvidia:$LD_LIBRARY_PATH
+    export PATH=/usr/local/cuda-8.0/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/lib64/nvidia:$LD_LIBRARY_PATH
 
 	apt-get -y --ignore-missing install libcuda0-375
 	apt-get -y --ignore-missing install cuda-command-line-tools-9-0
@@ -108,3 +109,4 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install cuda-toolkit-9-0
 	apt-get -y --ignore-missing install cuda-visual-tools-9-0  
     
+
