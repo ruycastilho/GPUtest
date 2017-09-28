@@ -1,3 +1,5 @@
+# MANUAL
+
 Bootstrap: debootstrap
 OSVersion: trusty  
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
@@ -108,5 +110,3 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install cuda-samples-9-0
 	apt-get -y --ignore-missing install cuda-toolkit-9-0
 	apt-get -y --ignore-missing install cuda-visual-tools-9-0  
-    
-
