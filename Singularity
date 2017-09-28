@@ -18,8 +18,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install libtool
  
     apt-get -y install linux-headers-generic
-	apt-get purge nvidia*
-	add-apt-repository ppa:graphics-drivers
 	apt-get update
 	apt-get -y install nvidia-375
     apt-get -y install nvidia-opencl-dev
