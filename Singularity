@@ -1,3 +1,5 @@
+# Automatic
+
 Bootstrap: docker
 From: nvidia/cuda:8.0-runtime-ubuntu14.04
 
