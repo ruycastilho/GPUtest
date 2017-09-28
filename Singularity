@@ -7,65 +7,23 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
     apt-get update
     apt-get -y install build-essential
+    apt-get -y install apt-utils
     apt-get -y install make
     apt-get -y install cmake
 	apt-get -y install wget
     apt-get -y install flex
-    apt-get -y install apt-utils
     apt-get -y install automake
     apt-get -y install autoconf
     apt-get -y install autotools-dev
     apt-get -y install libtool
 
 	# Cuda 8.0
-
     apt-get -y install linux-headers-generic
     cd /tmp
 	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb"
     dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb
 	apt-key add /var/cuda-repo-8-0-local-ga2/7fa2af80.pub
-	apt-get update
-	apt-get -y install cuda
-
-	apt-get -y --ignore-missing install libcuda1-375
-	apt-get -y --ignore-missing install cuda-8-0
-	apt-get -y --ignore-missing install cuda-command-line-tools-8-0
-	apt-get -y --ignore-missing install cuda-core-8-0
-	apt-get -y --ignore-missing install cuda-cublas-8-0
-	apt-get -y --ignore-missing install cuda-cublas-dev-8-0
-	apt-get -y --ignore-missing install cuda-cudart-8-0
-	apt-get -y --ignore-missing install cuda-cudart-dev-8-0
-	apt-get -y --ignore-missing install cuda-cufft-8-0
-	apt-get -y --ignore-missing install cuda-cufft-dev-8-0
-	apt-get -y --ignore-missing install cuda-curand-8-0
-	apt-get -y --ignore-missing install cuda-curand-dev-8-0
-	apt-get -y --ignore-missing install cuda-cusolver-8-0
-	apt-get -y --ignore-missing install cuda-cusolver-dev-8-0
-	apt-get -y --ignore-missing install cuda-cusparse-8-0
-	apt-get -y --ignore-missing install cuda-cusparse-dev-8-0
-	apt-get -y --ignore-missing install cuda-demo-suite-8-0
-	apt-get -y --ignore-missing install cuda-documentation-8-0
-	apt-get -y --ignore-missing install cuda-driver-dev-8-0
-	apt-get -y --ignore-missing install cuda-drivers
-	apt-get -y --ignore-missing install cuda-license-8-0
-	apt-get -y --ignore-missing install cuda-misc-headers-8-0
-	apt-get -y --ignore-missing install cuda-npp-8-0
-	apt-get -y --ignore-missing install cuda-npp-dev-8-0
-	apt-get -y --ignore-missing install cuda-nvgraph-8-0
-	apt-get -y --ignore-missing install cuda-nvgraph-dev-8-0
-	apt-get -y --ignore-missing install cuda-nvml-dev-8-0
-	apt-get -y --ignore-missing install cuda-nvrtc-8-0
-	apt-get -y --ignore-missing install cuda-nvrtc-dev-8-0
-	apt-get -y --ignore-missing install cuda-repo-ubuntu1404
-	apt-get -y --ignore-missing install cuda-runtime-8-0
-	apt-get -y --ignore-missing install cuda-samples-8-0
-	apt-get -y --ignore-missing install cuda-toolkit-8-0
-	apt-get -y --ignore-missing install cuda-visual-tools-8-0  
-
-	export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-	export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64\
-                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
+                    
 	# OpenCL
 
     apt-get -y install nvidia-opencl-dev
@@ -109,3 +67,44 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	apt-get -y --ignore-missing install ocl-icd-libopencl1:amd64
     apt-get -y --ignore-missing install ocl-icd-opencl-dev
 
+    # Cuda
+
+	apt-get update
+	apt-get -y install cuda
+    export PATH=/usr/local/cuda-9.0/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/lib63/nvidia:$LD_LIBRARY_PATH
+
+	apt-get -y --ignore-missing install libcuda0-375
+	apt-get -y --ignore-missing install cuda-command-line-tools-9-0
+	apt-get -y --ignore-missing install cuda-core-9-0
+	apt-get -y --ignore-missing install cuda-cublas-9-0
+	apt-get -y --ignore-missing install cuda-cublas-dev-9-0
+	apt-get -y --ignore-missing install cuda-cudart-9-0
+	apt-get -y --ignore-missing install cuda-cudart-dev-9-0
+	apt-get -y --ignore-missing install cuda-cufft-9-0
+	apt-get -y --ignore-missing install cuda-cufft-dev-9-0
+	apt-get -y --ignore-missing install cuda-curand-9-0
+	apt-get -y --ignore-missing install cuda-curand-dev-9-0
+	apt-get -y --ignore-missing install cuda-cusolver-9-0
+	apt-get -y --ignore-missing install cuda-cusolver-dev-9-0
+	apt-get -y --ignore-missing install cuda-cusparse-9-0
+	apt-get -y --ignore-missing install cuda-cusparse-dev-9-0
+	apt-get -y --ignore-missing install cuda-demo-suite-9-0
+	apt-get -y --ignore-missing install cuda-documentation-9-0
+	apt-get -y --ignore-missing install cuda-driver-dev-9-0
+	apt-get -y --ignore-missing install cuda-drivers
+	apt-get -y --ignore-missing install cuda-license-9-0
+	apt-get -y --ignore-missing install cuda-misc-headers-9-0
+	apt-get -y --ignore-missing install cuda-npp-9-0
+	apt-get -y --ignore-missing install cuda-npp-dev-9-0
+	apt-get -y --ignore-missing install cuda-nvgraph-9-0
+	apt-get -y --ignore-missing install cuda-nvgraph-dev-9-0
+	apt-get -y --ignore-missing install cuda-nvml-dev-9-0
+	apt-get -y --ignore-missing install cuda-nvrtc-9-0
+	apt-get -y --ignore-missing install cuda-nvrtc-dev-9-0
+	apt-get -y --ignore-missing install cuda-runtime-9-0
+	apt-get -y --ignore-missing install cuda-samples-9-0
+	apt-get -y --ignore-missing install cuda-toolkit-9-0
+	apt-get -y --ignore-missing install cuda-visual-tools-9-0  
+    
