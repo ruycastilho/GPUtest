@@ -28,7 +28,6 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	# Nvidia // OpenCL
 
 	apt-get purge nvidia*
-	add-apt-repository ppa:graphics-drivers
 	apt-get update
 	apt-get -y install nvidia-375
     apt-get -y install nvidia-opencl-dev
