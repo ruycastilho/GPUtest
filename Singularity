@@ -24,7 +24,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     echo $'blacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
     update-initramfs -u
 	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run"
-    sh cuda_8.0.61_375.26_linux.run
+    sh cuda_8.0.61_375.26_linux-run
     export PATH=/usr/local/cuda-8.0/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=/usr/lib64/nvidia:$LD_LIBRARY_PATH
