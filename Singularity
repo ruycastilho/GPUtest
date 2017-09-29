@@ -16,9 +16,11 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install autoconf
     apt-get -y install autotools-dev
     apt-get -y install libtool
- 
+    apt-get -y install gcc
+
     apt-get -y install linux-headers-generic
-	apt-get update
+	
+    apt-get update
 	apt-get -y install nvidia-375
     apt-get -y install nvidia-opencl-dev
 	apt-get -y install nvidia-375-dev
