@@ -29,8 +29,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 	apt-get -y install libopencv-core2.4:amd64
 	apt-get -y install libopencv-features2d-dev:amd64
 	apt-get -y install libopencv-features2d2.4:amd64
-	apt-get -y install libopencv-flann-dev:amd64ls
-	apt-get -y install libopencv-flann2.4:amd64
 	apt-get -y install libopencv-highgui-dev:amd64
 	apt-get -y install libopencv-highgui2.4:amd64
 	apt-get -y install libopencv-imgproc-dev:amd64
