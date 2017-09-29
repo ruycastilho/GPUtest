@@ -18,20 +18,7 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install libtool
     apt-get -y install gcc
 
-    apt-get -y install linux-headers-generic
-	
-    apt-get update
-	apt-get -y install nvidia-375
-    apt-get -y install nvidia-opencl-dev
-	apt-get -y install nvidia-375-dev
-	apt-get -y install nvidia-modprobe
-	apt-get -y install nvidia-opencl-icd-375
-	apt-get -y install nvidia-prime
-	apt-get -y install nvidia-profiler
-	apt-get -y install nvidia-visual-profiler
-	apt-get -y install nvidia-settings
-	
-	
+    # OpenCL	
 	apt-get -y install opencl-headers
 	apt-get -y install opencv-doc
 	apt-get -y install python-opencv
@@ -62,3 +49,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 	apt-get -y install ocl-icd-libopencl1:amd64
     apt-get -y install ocl-icd-opencl-dev
 
+    # OpenMP
+    apt-get update
+    apt-get install libopenmpi1.6
