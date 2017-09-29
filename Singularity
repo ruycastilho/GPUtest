@@ -49,4 +49,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 
     # OpenMP
     apt-get update
-    apt-get install libopenmpi1.6
+    apt-get -y install openmpi-bin
+    apt-get -y install openmpi-doc
+    apt-get -y install libopenmpi-dev
