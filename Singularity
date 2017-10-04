@@ -46,6 +46,7 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 	apt-get -y install libopencv-video2.4:amd64
 	apt-get -y install ocl-icd-libopencl1:amd64
     apt-get -y install ocl-icd-opencl-dev
+    apt-get -y install clinfo
 
     # Nvidia
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/375.26/NVIDIA-Linux-x86_64-375.26.run"
