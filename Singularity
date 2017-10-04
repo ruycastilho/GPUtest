@@ -50,6 +50,7 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     # Nvidia
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/375.26/NVIDIA-Linux-x86_64-375.26.run"
     chmod 777 NVIDIA-Linux-x86_64-375.26.run
+    sh NVIDIA-Linux-x86_64-375.26.run    
     apt-get update
     apt-get upgrade
 
