@@ -47,13 +47,15 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 	apt-get -y install ocl-icd-libopencl1:amd64
     apt-get -y install ocl-icd-opencl-dev
     apt-get -y install clinfo
+    apt-get -y install nvidia-opencl-icd-375
 
     # Nvidia
-    wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/375.26/NVIDIA-Linux-x86_64-375.26.run"
-    chmod 777 NVIDIA-Linux-x86_64-375.26.run
-    ./NVIDIA-Linux-x86_64-375.26.run    
-    apt-get update
-    apt-get upgrade
+#    wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/375.26/NVIDIA-Linux-x86_64-375.26.run"
+#    chmod 777 NVIDIA-Linux-x86_64-375.26.run
+#    ./NVIDIA-Linux-x86_64-375.26.run    
+#    apt-get update
+#    apt-get upgrade
+
 
     # OpenMP
     #apt-get update
