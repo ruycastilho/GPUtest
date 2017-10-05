@@ -17,7 +17,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install autotools-dev
     apt-get -y install libtool
     apt-get -y install gcc
-    apt-get -y install atool
 
     # OpenCL	
 
