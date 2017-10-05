@@ -69,5 +69,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     #apt-get -y install opencl-headers
     #apt-get -y install ocl-icd-libopencl1:amd64
     #apt-get -y install oc l-icd-opencl-dev
-    #apt-get -y install clinfo
+    apt-get -y install clinfo
     #apt-get -y install nvidia-opencl-icd-375
