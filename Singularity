@@ -28,7 +28,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 #    service gdm stop
     apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
     #reboot
-    sudo /NVIDIA-Linux-x86_64-384.90.run
+    sudo ./NVIDIA-Linux-x86_64-384.90.run
     nvidia-xconfig
 #    service gdm start
     
