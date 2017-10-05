@@ -19,44 +19,55 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install libtool
     apt-get -y install dkms
     apt-get -y install linux-headers-generic
+    apt-get -y install atool
 
     # Cuda 8.0
-    echo $'blacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
-    update-initramfs -u
-	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run"
-    sh cuda_8.0.61_375.26_linux-run
-    export PATH=/usr/local/cuda-8.0/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/usr/lib64/nvidia:$LD_LIBRARY_PATH
+    wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
+    echo $'blacklist vga16fb\nblacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
+    service lightdm stop
+    apt-get -y --purge remove nvidia-*
+    service gdm stop
+    apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
+    #reboot
+    ./NVIDIA-Linux-x86_64-384.90.run
+    nvidia-xconfig
+    service gdm start
+    CUDA_REPO_PKG=cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
+    wget -q "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb" -O /tmp/${CUDA_REPO_PKG}
+    dpkg -i /tmp/${CUDA_REPO_PKG} 
+    rm -f /tmp/${CUDA_REPO_PKG} 
+ 
+    ML_REPO_PKG=nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb 
+    wget -q http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/
+ x86_64/${ML_REPO_PKG} -O /tmp/${ML_REPO_PKG} 
+    dpkg -i /tmp/${ML_REPO_PKG} 
+    rm -f /tmp/${ML_REPO_PKG} 
+  
+    apt-get update
+    apt-get -y install digits cuda
+
+
+#    update-initramfs -u
+#	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run"
+#    sh cuda_8.0.61_375.26_linux-run
+#    export PATH=/usr/local/cuda-8.0/bin:$PATH
+#    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+#    export LD_LIBRARY_PATH=/usr/lib64/nvidia:$LD_LIBRARY_PATH
 
                 
 	# OpenCL
-    apt-get -y --ignore-missing install opencl-headers
-	apt-get -y --ignore-missing install opencv-doc
-	apt-get -y --ignore-missing install python-opencv
-	apt-get -y --ignore-missing install libopencv-calib3d-dev:amd64
-	apt-get -y --ignore-missing install libopencv-calib3d2.4:amd64
-	apt-get -y --ignore-missing install libopencv-contrib2.4:amd64
-	apt-get -y --ignore-missing install libopencv-core-dev:amd64
-	apt-get -y --ignore-missing install libopencv-core2.4:amd64
-	apt-get -y --ignore-missing install libopencv-features2d-dev:amd64
-	apt-get -y --ignore-missing install libopencv-features2d2.4:amd64
-	apt-get -y --ignore-missing install libopencv-flann-dev:amd64ls
-	apt-get -y --ignore-missing install libopencv-flann2.4:amd64
-	apt-get -y --ignore-missing install libopencv-highgui-dev:amd64
-	apt-get -y --ignore-missing install libopencv-highgui2.4:amd64
-	apt-get -y --ignore-missing install libopencv-imgproc-dev:amd64
-	apt-get -y --ignore-missing install libopencv-imgproc2.4:amd64
-	apt-get -y --ignore-missing install libopencv-legacy-dev:amd64
-	apt-get -y --ignore-missing install libopencv-legacy2.4:amd64
-	apt-get -y --ignore-missing install libopencv-ml-dev:amd64
-	apt-get -y --ignore-missing install libopencv-ml2.4:amd64
-	apt-get -y --ignore-missing install libopencv-objdetect-dev:amd64
-	apt-get -y --ignore-missing install libopencv-objdetect2.4:amd64
-	apt-get -y --ignore-missing install libopencv-ocl-dev:amd64
-	apt-get -y --ignore-missing install libopencv-ocl2.4:amd64
-	apt-get -y --ignore-missing install libopencv-photo2.4:amd64
-	apt-get -y --ignore-missing install libopencv-video-dev:amd64
-	apt-get -y --ignore-missing install libopencv-video2.4:amd64
-	apt-get -y --ignore-missing install ocl-icd-libopencl1:amd64
-    apt-get -y --ignore-missing install ocl-icd-opencl-dev
+   
+    wget -q "http://registrationcenter-download.intel.    com/akdlm/irc_nas/vcp/11705/intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz"
+    aunpack intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
+    cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
+    ./install_GUI.sh
+
+    wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
+    aunpack opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
+    cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
+    ./install.sh
+    #apt-get -y install opencl-headers
+    #apt-get -y install ocl-icd-libopencl1:amd64
+    #apt-get -y install oc l-icd-opencl-dev
+    #apt-get -y install clinfo
+    #apt-get -y install nvidia-opencl-icd-375
