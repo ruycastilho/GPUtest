@@ -28,19 +28,19 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 #    service gdm stop
     apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
     #reboot
-    ./NVIDIA-Linux-x86_64-384.90.run
+    sudo /NVIDIA-Linux-x86_64-384.90.run
     nvidia-xconfig
 #    service gdm start
     
     CUDA_REPO_PKG=cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
     wget -q "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb" -O /tmp/${CUDA_REPO_PKG}
-    dpkg -i /tmp/${CUDA_REPO_PKG} 
+    sudo dpkg -i /tmp/${CUDA_REPO_PKG} 
     rm -f /tmp/${CUDA_REPO_PKG} 
  
     ML_REPO_PKG=nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb 
     wget -q http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/
  x86_64/${ML_REPO_PKG} -O /tmp/${ML_REPO_PKG} 
-    dpkg -i /tmp/${ML_REPO_PKG} 
+    sudo dpkg -i /tmp/${ML_REPO_PKG} 
     rm -f /tmp/${ML_REPO_PKG} 
   
     apt-get update
@@ -51,10 +51,10 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     wget -q "http://registrationcenter-download.intel.    com/akdlm/irc_nas/vcp/11705/intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz"
     tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
     cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
-    ./install_GUI.sh
+    sudo ./install_GUI.sh
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
     tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
     cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
-    ./install.sh
+    sudo ./install.sh
     apt-get -y install clinfo
