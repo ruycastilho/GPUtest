@@ -19,7 +19,6 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install libtool
     apt-get -y install dkms
     apt-get -y install linux-headers-generic
-    apt-get -y install atool
 
     # Cuda 8.0
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
@@ -45,29 +44,16 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
   
     apt-get update
     apt-get -y install digits cuda
-
-
-#    update-initramfs -u
-#	wget -nv "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run"
-#    sh cuda_8.0.61_375.26_linux-run
-#    export PATH=/usr/local/cuda-8.0/bin:$PATH
-#    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
-#    export LD_LIBRARY_PATH=/usr/lib64/nvidia:$LD_LIBRARY_PATH
-
                 
 	# OpenCL
    
     wget -q "http://registrationcenter-download.intel.    com/akdlm/irc_nas/vcp/11705/intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz"
-    aunpack intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
+    tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
     cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
     ./install_GUI.sh
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
-    aunpack opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
+    tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
     cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     ./install.sh
-    #apt-get -y install opencl-headers
-    #apt-get -y install ocl-icd-libopencl1:amd64
-    #apt-get -y install oc l-icd-opencl-dev
     apt-get -y install clinfo
-    #apt-get -y install nvidia-opencl-icd-375
