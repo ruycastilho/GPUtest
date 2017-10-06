@@ -21,7 +21,8 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install linux-headers-generic
     export TERM=xterm
     apt-get upgrade
-    apt-get install linux-headers-`uname -r`
+    apt-get -y install linux-generic
+    apt-get install -y linux-headers-generic
     
     # Cuda 8.0
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
