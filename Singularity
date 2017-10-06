@@ -21,6 +21,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install linux-headers-generic
     export TERM=xterm
     apt-get upgrade
+    apt-get dist-upgrade
     apt-get -y install linux-generic
     apt-get install -y linux-headers-`uname -r`
     
