@@ -23,6 +23,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get upgrade
     apt-get dist-upgrade
     apt-get -y install linux-generic
+    reboot
     apt-get install -y linux-headers-`uname -r`
     
     # Cuda 8.0
