@@ -19,6 +19,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y install libtool
     apt-get -y install dkms
     apt-get -y install linux-headers-generic
+    export TERM=xterm
 
     # Cuda 8.0
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
