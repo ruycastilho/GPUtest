@@ -22,20 +22,17 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export TERM=xterm
     apt-get upgrade
     apt-get -y install linux-generic
-    apt-get install -y linux-headers-generic
+    apt-get install -y linux-headers-`uname -r`
     
     # Cuda 8.0
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
     echo $'blacklist vga16fb\nblacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
-#    service lightdm stop
     apt-get -y --purge remove nvidia-*
-#    service gdm stop
     apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
     #reboot
     chmod +x ./NVIDIA-Linux-x86_64-384.90.run
     ./NVIDIA-Linux-x86_64-384.90.run -s
     nvidia-xconfig
-#    service gdm start
     
     CUDA_REPO_PKG=cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
     wget -q "https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64-deb" -O /tmp/${CUDA_REPO_PKG}
