@@ -30,7 +30,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
     #reboot
     chmod +x ./NVIDIA-Linux-x86_64-384.90.run
-    ./NVIDIA-Linux-x86_64-384.90.run
+    yes | ./NVIDIA-Linux-x86_64-384.90.run
     nvidia-xconfig
 #    service gdm start
     
@@ -54,11 +54,11 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
     cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
     chmod +x .;install_GUI.sh
-    ./install_GUI.sh
+    yes | ./install_GUI.sh
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
     tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
     cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     chmod +x ./install.sh
-    ./install.sh
+    yes | ./install.sh
     apt-get -y install clinfo
