@@ -18,7 +18,9 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install libtool
     apt-get -y install gcc
     export TERM=xterm
-    apt-get install linux-headers-`uname -r`
+    #apt-get install linux-headers-`uname -r`
+    apt-get install -y linux-headers-generic
+    
     # OpenCL	
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/vcp/11705/intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz"
