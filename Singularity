@@ -27,13 +27,15 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
     cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
     chmod +x install_GUI.sh
-    ./install_GUI.sh -s
+    #./install_GUI.sh -s
+    ./install_GUI.sh
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
     tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
     cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     chmod +x install.sh
-    ./install.sh -s
+    #./install.sh -s
+    ./install.sh
 
     apt-get -y install clinfo
 
