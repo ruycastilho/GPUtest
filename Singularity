@@ -35,7 +35,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
 
     apt-get -y install clinfo
 
-
     # OpenMP
     apt-get -y install openmpi-bin
     apt-get -y install openmpi-doc
