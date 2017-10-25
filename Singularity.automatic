@@ -27,16 +27,18 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
     cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
     chmod +x install_GUI.sh
-    #./install_GUI.sh -s
-    ./install_GUI.sh
+    sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg \
+    ./install_GUI.sh -s accept.cfg
+    rm -rf intel_sdk_for_opencl_2017_7.0.0.2511_x64/
 
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
     tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
     cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     chmod +x install.sh
-    #./install.sh -s
+    sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg \
     ./install.sh
-
+    rm -rf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
+    
     apt-get -y install clinfo
 
     # OpenMP
