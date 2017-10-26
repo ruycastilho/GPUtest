@@ -18,7 +18,6 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install libtool
     apt-get -y install gcc
     export TERM=xterm
-    #apt-get install linux-headers-`uname -r`
     apt-get install -y linux-headers-generic
     
     # OpenCL	
