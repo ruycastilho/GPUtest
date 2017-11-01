@@ -38,6 +38,9 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     ./install.sh
     rm -rf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     
+    apt-get update
+    apt-get -y install nvidia-opencl-icd-375
+    apt-get -y install nvidia-modprobe
     apt-get -y install ocl-icd-opencl-dev
     apt-get -y install clinfo
 
