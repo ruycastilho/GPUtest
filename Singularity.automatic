@@ -38,6 +38,7 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     ./install.sh
     rm -rf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
     
+    apt-get install ocl-icd-opencl-dev
     apt-get -y install clinfo
 
     # openmpi
