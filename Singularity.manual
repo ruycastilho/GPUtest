@@ -26,11 +26,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt-get install -y linux-headers-3.13.0.132.141
     
     # Cuda 8.0
+
     wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
     echo $'blacklist vga16fb\nblacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
     apt-get -y --purge remove nvidia-*
     apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
-    #reboot
+
     chmod +x ./NVIDIA-Linux-x86_64-384.90.run
     ./NVIDIA-Linux-x86_64-384.90.run -s
     nvidia-xconfig
