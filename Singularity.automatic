@@ -39,8 +39,8 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     
     apt-get update
     #apt-get -y -f install nvidia-375 nvidia-modprobe
-    a#pt-get -y -f install nvidia-opencl-icd-375
-    #pt-get -y install ocl-icd-opencl-dev
+    #apt-get -y -f install nvidia-opencl-icd-375
+    #apt-get -y install ocl-icd-opencl-dev
     apt-get -y install clinfo
 
     # openmpi
