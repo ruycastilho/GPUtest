@@ -35,12 +35,12 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg
     ./install.sh -s accept.cfg
 
-    #cd ~/Downloads
-    #wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
-    #tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
-    #cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
-    #sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg
-    #./install.sh -s accept.cfg
+    cd ~/Downloads
+    wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
+    tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
+    cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
+    sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg
+    ./install.sh -s accept.cfg
     
     apt-get update
     #apt-get -y -f install nvidia-modprobe # nvidia-375 
