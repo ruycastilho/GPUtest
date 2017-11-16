@@ -16,6 +16,7 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install apt-utils
     apt-get -y install make
     apt-get -y install cmake
+    apt-get -y install fuse
 	apt-get -y install wget
     apt-get -y install flex
     apt-get -y install automake
