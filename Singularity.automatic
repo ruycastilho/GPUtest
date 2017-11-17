@@ -1,7 +1,9 @@
 # Automatic
 
 Bootstrap: docker
-From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
+#From: chihchun/opencl-intel 
+From: ubuntu:14.04 
+#From: nvidia/cuda:8.0-runtime-ubuntu14.04
 
 %environment
     #LD_LIBRARY_PATH=/host-libs:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-8.0/lib64
@@ -30,14 +32,14 @@ From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get install -y linux-headers-generic
     #apt-get install -y nvidia-opencl-icd-375 ocl-icd-libopencl1
     #apt install ocl-icd-opencl-dev
-    apt-get install -y rpm alien libnuma1    
+    apt-get install -y rpm alien libnuma1 fakeroot
     
     # OpenCL	
 
     cd /tmp
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/vcp/11705/intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz"
     tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
-    cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/
+    cd intel_sdk_for_opencl_2017_7.0.0.2511_x64/rpm/
 
     for f in *.rpm; do
         fakeroot alien --to-deb $f
@@ -52,7 +54,15 @@ From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
     cd /tmp
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz"
     tar -zxvf opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz
-    cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/
+    cd opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25/rpm/
+
+    for f in *.rpm; do
+        fakeroot alien --to-deb $f
+    done
+    for f in *.deb; do
+        dpkg -i $f
+    done
+
     sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg
     ./install.sh -s accept.cfg
 
