@@ -28,9 +28,9 @@ From: nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install gcc
     export TERM=xterm
     apt-get install -y linux-headers-generic
-    apt-get install -y nvidia-opencl-icd-375 ocl-icd-libopencl1
-    apt install ocl-icd-opencl-dev
-    #apt-get install -y rpm alien libnuma1    
+    #apt-get install -y nvidia-opencl-icd-375 ocl-icd-libopencl1
+    #apt install ocl-icd-opencl-dev
+    apt-get install -y rpm alien libnuma1    
     
     # OpenCL	
 
