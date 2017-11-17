@@ -1,7 +1,7 @@
 # Automatic
 
 Bootstrap: docker
-From: ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
+From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
 
 %environment
     #LD_LIBRARY_PATH=/host-libs:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-8.0/lib64
