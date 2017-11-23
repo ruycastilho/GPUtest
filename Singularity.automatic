@@ -1,7 +1,7 @@
 # Automatic
 
 Bootstrap: docker
-From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
+From: chihchun/opencl-intel
 
 %post
 
@@ -10,7 +10,7 @@ From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install apt-utils
     apt-get -y install make
     apt-get -y install cmake
-    mkdir /dev/fuse
+    mkdir /dev/fuse 
     chmod 777 /dev/fuse
     apt-get -y install fuse
 	apt-get -y install wget
@@ -30,3 +30,14 @@ From: chihchun/opencl-intel #ubuntu:14.04 #nvidia/cuda:8.0-runtime-ubuntu14.04
     apt-get -y install openmpi-doc
     apt-get -y install libopenmpi-dev
 
+   
+    # Cuda 8.0
+
+    wget -q "http://us.download.nvidia.com/XFree86/Linux-x86_64/384.90/NVIDIA-Linux-x86_64-384.90.run"
+    echo $'blacklist vga16fb\nblacklist nouveau\noptions nouveau modeset=0' > /etc/modprobe.d/blacklist-nouveau.conf
+    apt-get -y --purge remove nvidia-*
+    apt-get -y --purge remove xserver-xorg-video-nouveau-lts-quantal
+
+    chmod +x ./NVIDIA-Linux-x86_64-384.90.run
+    ./NVIDIA-Linux-x86_64-384.90.run -s
+    nvidia-xconfig
