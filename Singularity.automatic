@@ -5,7 +5,7 @@ From: chihchun/opencl-intel
 
 %enviroment
     CUDA_VERSION=8.0.61
-    CUDA_P
+    CUDA_PKG_VERSION=$CUDA_VERSION-1
     PATH=usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
     LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64
     NVIDIA_VISIBLE_DEVICES=all
