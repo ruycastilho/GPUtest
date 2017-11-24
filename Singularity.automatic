@@ -53,15 +53,15 @@ From: chihchun/opencl-intel
     echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list
 
     apt-get update && apt-get install -y --no-install-recommends \
-        cuda-nvrtc-8-0=8.0.61.2-1 \
-        cuda-nvgraph-8-0=8.0.61.2-1 \
-        cuda-cusolver-8-0=8.0.61.2-1 \
-        cuda-cublas-8-0=8.0.61.2-1 \
-        cuda-cufft-8-0=8.0.61.2-1 \
-        cuda-curand-8-0=8.0.61.2-1 \
-        cuda-cusparse-8-0=8.0.61.2-1 \
-        cuda-npp-8-0=8.0.61.2-1 \
-        cuda-cudart-8-0=8.0.61.2-1 \
+        cuda-nvrtc-8-0-8.0.61.2-1 \
+        cuda-nvgraph-8-0-8.0.61.2-1 \
+        cuda-cusolver-8-0-8.0.61.2-1 \
+        cuda-cublas-8-0-8.0.61.2-1 \
+        cuda-cufft-8-0-8.0.61.2-1 \
+        cuda-curand-8-0-8.0.61.2-1 \
+        cuda-cusparse-8-0-8.0.61.2-1 \
+        cuda-npp-8-0-8.0.61.2-1 \
+        cuda-cudart-8-0-8.0.61.2-1 \
     ln -s cuda-8.0 /usr/local/cuda && \
     rm -rf /var/lib/apt/lists/*
 
