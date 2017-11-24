@@ -5,7 +5,6 @@ From: chihchun/opencl-intel
 
 %enviroment
     CUDA_VERSION=8.0.61
-    CUDA_PKG_VERSION=$CUDA_VERSION-1
     PATH=usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
     LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64
     NVIDIA_VISIBLE_DEVICES=all
@@ -54,15 +53,15 @@ From: chihchun/opencl-intel
     echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/cuda.list
 
     apt-get update && apt-get install -y --no-install-recommends \
-        cuda-nvrtc-$CUDA_PKG_VERSION \
-        cuda-nvgraph-$CUDA_PKG_VERSION \
-        cuda-cusolver-$CUDA_PKG_VERSION \
+        cuda-nvrtc-8-0=8.0.61.2-1 \
+        cuda-nvgraph-8-0=8.0.61.2-1 \
+        cuda-cusolver-8-0=8.0.61.2-1 \
         cuda-cublas-8-0=8.0.61.2-1 \
-        cuda-cufft-$CUDA_PKG_VERSION \
-        cuda-curand-$CUDA_PKG_VERSION \
-        cuda-cusparse-$CUDA_PKG_VERSION \
-        cuda-npp-$CUDA_PKG_VERSION \
-        cuda-cudart-$CUDA_PKG_VERSION && \
+        cuda-cufft-8-0=8.0.61.2-1 \
+        cuda-curand-8-0=8.0.61.2-1 \
+        cuda-cusparse-8-0=8.0.61.2-1 \
+        cuda-npp-8-0=8.0.61.2-1 \
+        cuda-cudart-8-0=8.0.61.2-1 \
     ln -s cuda-8.0 /usr/local/cuda && \
     rm -rf /var/lib/apt/lists/*
 
