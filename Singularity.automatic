@@ -43,8 +43,6 @@ From: chihchun/opencl-intel
     CUDA_VERSION=8.0.61
     CUDA_PKG_VERSION=8-0\=$CUDA_VERSION-1
 
-    PATH=usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
-    LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64
     NVIDIA_VISIBLE_DEVICES=all
     NVIDIA_DRIVER_CAPABILITIES=compute,utility
     NVIDIA_REQUIRE_CUDA="cuda>=8.0"
@@ -71,3 +69,6 @@ From: chihchun/opencl-intel
 
     echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
     echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
+
+    export PATH=usr/local/nvidia/bin:/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda-8.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
