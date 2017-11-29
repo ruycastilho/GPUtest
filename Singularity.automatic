@@ -3,9 +3,6 @@
 Bootstrap: docker
 From: chihchun/opencl-intel
 
-%enviroment
-
-
 %labels
     com.nvidia.volumes.needed="nvidia_driver"
     com.nvidia.cuda.version="${CUDA_VERSION}"
@@ -71,4 +68,4 @@ From: chihchun/opencl-intel
     echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
 
     export PATH=usr/local/nvidia/bin:/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda-8.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+    export LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda-8.0/lib64\${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}    
