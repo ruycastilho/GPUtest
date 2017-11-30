@@ -1,7 +1,7 @@
 # Automatic
 
 BootStrap: docker
-From: ubuntu:latest
+From: nvidia/cuda:8.0-devel
 
 %post
     apt-get update
