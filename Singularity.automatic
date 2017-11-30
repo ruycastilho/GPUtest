@@ -3,8 +3,11 @@
 Bootstrap: docker
 From: chihchun/opencl-intel
 
-%post
+%environment
+    LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH
 
+%post
     apt-get update
     apt-get -y install build-essential
     apt-get -y install apt-utils
