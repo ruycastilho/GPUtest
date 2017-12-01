@@ -33,8 +33,8 @@ From: nvidia/cuda:8.0-devel
     cd opencl_driver/
 
     apt-get update
-    apt-get install xz-utils
-    apt-get install openssl libnuma1 libpciaccess0
+    apt-get -y install xz-utils
+    apt-get -y install openssl libnuma1 libpciaccess0
 
     mkdir intel-opencl
     tar -C intel-opencl -Jxf intel-opencl-r5.0-BUILD_ID.x86_64.tar.xz
