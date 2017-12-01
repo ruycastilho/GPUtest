@@ -24,12 +24,14 @@ From: nvidia/cuda:8.0-devel
     apt-get install -y linux-headers-generic
     apt-get -y install clinfo
     apt-get -y install tar
+    apt-get -y install zip
+    apt-get -y install unzip
  
     cd /tmp
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/11396/SRB5.0_linux64.zip"
     unzip SRB5.0_linux64.zip -d opencl_driver
     cd opencl_driver/
-    
+
     apt-get update
     apt-get install xz-utils
     mkdir intel-opencl
