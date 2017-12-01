@@ -37,9 +37,9 @@ From: nvidia/cuda:8.0-devel
     apt-get -y install openssl libnuma1 libpciaccess0
 
     mkdir intel-opencl
-    tar -C intel-opencl -Jxf intel-opencl-r5.0-BUILD_ID.x86_64.tar.xz
-    tar -C intel-opencl -Jxf intel-opencl-devel-r5.0-BUILD_ID.x86_64.tar.xz
-    tar -C intel-opencl -Jxf intel-opencl-cpu-r5.0-BUILD_ID.x86_64.tar.xz
+    tar -C intel-opencl -Jxf intel-opencl-r5.0-63503.x86_64.tar.xz
+    tar -C intel-opencl -Jxf intel-opencl-devel-r5.0-63503.x86_64.tar.xz
+    tar -C intel-opencl -Jxf intel-opencl-cpu-r5.0-63503.x86_64.tar.xz
     cp -R intel-opencl/* /
     ldconfig
     
