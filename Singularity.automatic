@@ -45,8 +45,8 @@ From: nvidia/cuda:8.0-devel
     
     cd /tmp
     wget -q "http://registrationcenter-download.intel.com/akdlm/irc_nas/9553/intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64.tgz"
-    tar -zxvf intel_sdk_for_opencl_2017_7.0.0.2511_x64.tgz
-    cd intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64/
+    tar -zxvf intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64.tgz
+    cd intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64
     sed "s/ACCEPT_EULA=decline/ACCEPT_EULA=accept/g" silent.cfg > accept.cfg
     ./install.sh -s accept.cfg
 
