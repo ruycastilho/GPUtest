@@ -29,28 +29,34 @@ From: nvidia/cuda:8.0-devel
     apt-get install -y libxcb-dri3-0 libxcb-dri2-0
     apt-get install -y --no-install-recommends alien
 
-    # OpenCL™ 2.0 Driver for Intel® HD, Iris™, and Iris™ Pro Graphics for Linux* (64-bit)
-    INTEL_DRIVER_URL=http://registrationcenter-download.intel.com/akdlm/irc_nas/9418/intel-opencl-2.0-2.0-54425.tar.gz
-    # Intel® SDK for OpenCL™ Applications 2016 R2 for Linux* (64 bit)
-    INTEL_SDK_URL=http://registrationcenter-download.intel.com/akdlm/irc_nas/9553/intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64.tgz
+# Download the Intel OpenCL 2.0 development headers
+    export DEVEL_URL="https://software.intel.com/file/531197/download" \
+    && wget ${DEVEL_URL} -q -O download.zip --no-check-certificate \
+    && unzip download.zip \
+    && rm -f download.zip *.tar.xz* \
+    && alien --to-deb *dev*.rpm \
+    && dpkg -i *dev*.deb \
+    && rm *.rpm *.deb
 
-    cd /tmp
-    wget -q http://registrationcenter-download.intel.com/akdlm/irc_nas/9418/intel-opencl-2.0-2.0-54425.tar.gz
-    wget -q http://registrationcenter-download.intel.com/akdlm/irc_nas/9553/intel_sdk_for_opencl_2016_ubuntu_6.2.0.1760_x64.tgz
+# Download the Intel OpenCL CPU runtime and convert to .deb packages
+    export RUNTIME_URL="http://registrationcenter-download.intel.com/akdlm/irc_nas/9019/opencl_runtime_16.1.1_x64_ubuntu_6.4.0.25.tgz" \
+    && export TAR=$(basename ${RUNTIME_URL}) \
+    && export DIR=$(basename ${RUNTIME_URL} .tgz) \
+    && wget -q ${RUNTIME_URL} \
+    && tar -xf ${TAR} \
+    && for i in ${DIR}/rpm/*.rpm; do alien --to-deb $i; done \
+    && rm -rf ${DIR} ${TAR} \
+    && dpkg -i *.deb \
+    && rm *.deb
 
-    TARBALL=$(basename ${INTEL_DRIVER_URL})
-    DIR=$(basename ${INTEL_DRIVER_URL} .tar.gz)
-    tar zxvf ${TARBALL}
-    for i in ${DIR}/*rpm ; do alien --to-deb $i ; done
+    mkdir -p /etc/OpenCL/vendors/ \
+    && echo "/opt/intel/opencl-1.2-6.4.0.25/lib64/libintelocl.so" > /etc/OpenCL/vendors/intel.icd
 
-    TARBALL=$(basename ${INTEL_SDK_URL})
-    DIR=$(basename ${INTEL_SDK_URL} .tgz)
-    tar zxvf ${TARBALL}
-    for i in ${DIR}/rpm/*.rpm ; do alien --to-deb $i ; done
-    
-    dpkg -i *.deb
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    
+# Let the system know where to find the OpenCL library at runtime
+    OCL_INC=/opt/intel/opencl/include
+    OCL_LIB=/opt/intel/opencl-1.2-6.4.0.25/lib64
+    LD_LIBRARY_PATH=$OCL_LIB:$LD_LIBRARY_PATH
+
     # openmpi
     apt-get update
     apt-get -y install openmpi-bin
