@@ -10,6 +10,7 @@ From: nvidia/cuda:8.0-devel-ubuntu14.04
     apt-get -y install apt-utils
     apt-get -y install make
     apt-get -y install cmake
+    apt-get -y install git
     mkdir /dev/fuse 
     chmod 777 /dev/fuse
     apt-get -y install fuse
