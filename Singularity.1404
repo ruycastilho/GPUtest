@@ -9,18 +9,30 @@ From: nvidia/cuda:8.0-devel-ubuntu14.04
     apt-get -y install build-essential
     apt-get -y install apt-utils
     apt-get -y install make
-    apt-get -y install cmake
     apt-get -y install git
     mkdir /dev/fuse 
     chmod 777 /dev/fuse
     apt-get -y install fuse
 	apt-get -y install wget
+
+    cd /tmp
+    wget -q "https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz"
+    cd cmake-3.10.1/
+    ./configure
+    make
+    make install
+    cd
+    
     apt-get -y install flex
     apt-get -y install automake
     apt-get -y install autoconf
     apt-get -y install autotools-dev
     apt-get -y install libtool
-    apt-get -y install gcc
+
+    add-apt-repository -y ppa:jonathonf/gcc-7.2
+    apt-get update
+    apt-get install gcc-7 g++-7
+
     export TERM=xterm
     apt-get install -y linux-headers-generic
     apt-get -y install clinfo
@@ -62,7 +74,7 @@ From: nvidia/cuda:8.0-devel-ubuntu14.04
     apt-get update
     apt-get install -y libibnetdisc-dev
     cd /tmp
-    wget https://www.open-mpi.org/software/ompi/v3.0/downloads/openmpi-3.0.0.tar.gz
+    wget -q https://www.open-mpi.org/software/ompi/v3.0/downloads/openmpi-3.0.0.tar.gz
 
     tar -xvf openmpi-3.0.0.tar.gz
     cd openmpi-3.0.0
