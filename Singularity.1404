@@ -20,8 +20,8 @@ From: nvidia/cuda:8.0-devel-ubuntu14.04
     tar -xvf cmake-3.10.1.tar.gz
     cd cmake-3.10.1/
     ./configure
-    make
-    make install
+    make --silent
+    make install --silent
     cd
 
     apt-get -y install flex
@@ -30,10 +30,10 @@ From: nvidia/cuda:8.0-devel-ubuntu14.04
     apt-get -y install autotools-dev
     apt-get -y install libtool
 
-    #add-apt-repository -y ppa:jonathonf/gcc-7.2
-    #apt-get update
-    #apt-get install gcc-7 g++-7
-    apt-get -y install gcc
+    apt-get -y install software-properties-common
+    add-apt-repository -y ppa:jonathonf/gcc-7.2
+    apt-get update
+    apt-get -y install gcc-7 g++-7
 
     export TERM=xterm
     apt-get install -y linux-headers-generic

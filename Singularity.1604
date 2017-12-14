@@ -34,7 +34,7 @@ From: nvidia/cuda:8.0-devel
     apt-get -y install software-properties-common  
     add-apt-repository -y ppa:jonathonf/gcc-7.2
     apt-get update
-    apt-get install gcc-7 g++-7
+    apt-get -y install gcc-7 g++-7
 
     export TERM=xterm
     apt-get install -y linux-headers-generic
