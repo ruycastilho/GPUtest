@@ -23,18 +23,19 @@ From: nvidia/cuda:9.0-devel
     make --silent
     make install --silent
     
-    wget -q http://download.pgroup.com/secure/pgilinux-2017-1710-x86_64.tar.gz?XackFE9SNRu1LmnSo37o6L2Q5fwXF-IfHjT0ApipA7A-T69ZiIvpwoHcLh4hRF0dbPY383-UKsxoWeF1WXyom9y5UUeusKFWhbJ_d69QU24FS_2TT7-6peQ6wzhEc5D802_Tmx08
-    mv pgilinux-2017-1710-x86_64.tar.gz?XackFE9SNRu1LmnSo37o6L2Q5fwXF-IfHjT0ApipA7A-T69ZiIvpwoHcLh4hRF0dbPY383-UKsxoWeF1WXyom9y5UUeusKFWhbJ_d69QU24FS_2TT7-6peQ6wzhEc5D802_Tmx08 pgilinux-2017-1710-x86_64.tar.gz
-    tar xpfz pgilinux-2017-1710-x86_64.tar.gz
-    export PGI_SILENT=true
-    export PGI_ACCEPT_EULA=true
-    export PGI_INSTALL_DIR=/opt/pgi/
-    export PGI_INSTALL_TYPE=single
-    export PGI_INSTALL_NVIDIA=true
-    export PGI_INSTALL_JAVA=true
-    export PGI_INSTALL_MPI=true
-    export PGI_MPI_GPU_SUPPORT=true
-    ./install
+#    wget -q http://download.pgroup.com/secure/pgilinux-2017-1710-x86_64.tar.gz?XackFE9SNRu1LmnSo37o6L2Q5fwXF-IfHjT0ApipA7A-T69ZiIvpwoHcLh4hRF0dbPY383-UKsxoWeF1WXyom9y5UUeusKFWhbJ_d69QU24FS_2TT7-6peQ6wzhEc5D802_Tmx08
+#    mv pgilinux-2017-1710-x86_64.tar.gz?XackFE9SNRu1LmnSo37o6L2Q5fwXF-IfHjT0ApipA7A-T69ZiIvpwoHcLh4hRF0dbPY383-UKsxoWeF1WXyom9y5UUeusKFWhbJ_d69QU24FS_2TT7-6peQ6wzhEc5D802_Tmx08 pgilinux-2017-1710-x86_64.tar.gz
+#    tar xpfz pgilinux-2017-1710-x86_64.tar.gz
+#    export PGI_SILENT=true
+#    export PGI_ACCEPT_EULA=true
+#    export PGI_INSTALL_DIR=/opt/pgi/
+#    export PGI_INSTALL_TYPE=single
+#    export PGI_INSTALL_NVIDIA=true
+#    export PGI_INSTALL_JAVA=true
+#    export PGI_INSTALL_MPI=true
+#    export PGI_MPI_GPU_SUPPORT=true
+#    ./install
+    cd
 
     apt-get -y install flex
     apt-get -y install automake
